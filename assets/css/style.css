@@ -1,6 +1,132 @@
+.flex, .flex-row, .flex-row-space-around, .searchbar, .rate, .flex-column, .flex-column-space-around, main, .scores, .desk-tab-row, body, .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flex-row, .flex-row-space-around, .searchbar, .rate {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.flex-column, .flex-column-space-around, main, .scores, .desk-tab-row, body, .search {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.flex-row-space-around, .searchbar, .rate {
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.flex-column-space-around, main, .scores, .desk-tab-row {
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth; }
+
+body {
+  width: 100%; }
+
+.search {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  border: 2px solid green; }
+
+.slogan {
+  font-size: 20px;
+  font-style: italic;
+  margin: 20vh auto 15vh auto; }
+
+.brand {
+  margin: 0 auto 35px auto;
+  font-style: italic; }
+  .brand a {
+    text-decoration: none;
+    color: black; }
+
+.searchbar {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 40px;
+  margin: 0 auto;
+  border: 2px solid black; }
+
+.searchbar, input, button {
+  border-radius: 20px; }
+
+input, button {
+  height: 75%;
+  border: none;
+  outline: none; }
+
+input {
+  width: 65%;
+  text-align: center;
+  font-style: italic;
+  background-color: lightgreen; }
+
+button {
+  width: 15%;
+  background: none; }
+
+main {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px; }
+
+.city-name, .scores-header {
+  text-align: center;
+  margin-bottom: 30px; }
+
+.summary, .scores {
+  width: 75%;
+  margin: auto;
+  border-radius: 20px; }
+
+.summary {
+  padding: 35px;
+  border: 2px solid blue;
+  margin-bottom: 50px; }
+
+.scores {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.desk-tab-row {
+  margin-bottom: 5px; }
+
+.rate {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 2px solid red; }
+
+@media only screen and (min-width: 600px) and (max-width: 999px) {
+  .summary {
+    width: 65%; }
+  .scores {
+    border: 2px solid brown; }
+  .desk-tab-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  .rate {
+    width: 45%; } }
