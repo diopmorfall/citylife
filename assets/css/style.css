@@ -38,7 +38,7 @@ body {
   position: absolute;
   width: 100%;
   z-index: -1;
-  height: 100vh;
+  height: 103vh;
   background-image: url("/assets/img/1.jpg");
   background-repeat: no-repeat; }
 
@@ -50,10 +50,9 @@ body {
   border: 2px solid green; }
 
 .slogan {
-  font-size: 20px;
+  font-size: 18px;
   font-style: italic;
-  margin: 20vh auto 15vh auto;
-  color: white; }
+  margin: 20vh auto 15vh auto; }
 
 .brand {
   margin: 0 auto 35px auto;
@@ -88,6 +87,13 @@ input {
 button {
   width: 15%;
   background: none; }
+
+.error {
+  width: 75%;
+  margin: 25px auto;
+  color: red;
+  font-style: italic;
+  text-align: center; }
 
 main {
   -webkit-box-pack: center;
