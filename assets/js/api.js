@@ -1,13 +1,16 @@
-let url = "https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/scores/";
+import { showErrorMessage } from "./animations";
+import { City } from "./city";
 
 export async function fetchUrl(city){
     try{
         let response = await fetch(`https://api.teleport.org/api/urban_areas/slug:${city.replace(/ /g, "-")}/scores/`);
-        let data = await response.json();
-        console.log(data);
+        if(!response.ok) throw new Error();
+
+        //let cityDetails = await response.json();
+        //console.log(cityDetails);
+        let cityObj = new City(await response.json());
+        console.log(cityObj);
     } catch(error){
-        console.warn(error);
-        //todo: errors: city not found because it isn't in the database or it was misspelled
-        //todo: create a red div with the error message
+        showErrorMessage();
     }
 }

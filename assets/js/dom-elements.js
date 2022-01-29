@@ -1,3 +1,4 @@
+export const searchSection = document.querySelector(".search");
 export const slogan = document.querySelector(".slogan");
 export const siteName = document.querySelector(".brand");
 export const form = document.forms[0];

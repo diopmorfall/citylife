@@ -31,44 +31,38 @@
   scroll-behavior: smooth; }
 
 body {
-  position: relative;
   width: 100%; }
-
-.background {
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  height: 103vh;
-  background-image: url("/assets/img/1.jpg");
-  background-repeat: no-repeat; }
 
 .search {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
-  border: 2px solid green; }
+  background-color: #303030; }
 
 .slogan {
   font-size: 18px;
   font-style: italic;
-  margin: 20vh auto 15vh auto; }
+  margin: 15vh auto;
+  color: #e2e3e5; }
 
 .brand {
-  margin: 0 auto 35px auto;
-  font-style: italic; }
+  margin: 0 auto 30px auto;
+  font-style: italic;
+  color: #e2e3e5; }
   .brand a {
     text-decoration: none;
-    color: black; }
+    color: #e2e3e5; }
 
 .searchbar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   width: 75%;
   height: 40px;
   margin: 0 auto;
-  background-color: white;
+  background-color: #e2e3e5;
   opacity: 0.75; }
 
 .searchbar, input, button {
@@ -82,38 +76,53 @@ input, button {
 input {
   width: 65%;
   text-align: center;
-  font-style: italic; }
+  font-style: italic;
+  color: #303030;
+  background-color: inherit; }
 
 button {
   width: 15%;
   background: none; }
 
+.home-bg {
+  position: absolute;
+  bottom: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 40vh;
+  border: 2px solid lime; }
+
 .error {
-  width: 75%;
+  width: 85%;
   margin: 25px auto;
   color: red;
   font-style: italic;
-  text-align: center; }
+  text-align: center;
+  z-index: 2; }
 
 main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 30px; }
+  padding-top: 50px;
+  background-color: #e2e3e5;
+  color: #303030; }
 
 .city-name, .scores-header {
   text-align: center;
   margin-bottom: 30px; }
 
 .summary, .scores {
-  width: 80%;
+  width: 85%;
   margin: auto;
   border-radius: 20px; }
 
 .summary {
-  padding: 35px;
-  border: 2px solid blue;
-  margin-bottom: 50px; }
+  padding: 15px;
+  margin-bottom: 50px;
+  line-height: 20px;
+  font-style: italic; }
 
 .scores {
   -webkit-box-pack: center;
@@ -129,8 +138,7 @@ main {
           align-items: center;
   height: 40px;
   margin-bottom: 20px;
-  border-radius: 20px;
-  border: 2px solid red; }
+  border-radius: 20px; }
 
 @media only screen and (min-width: 600px) {
   .summary {
@@ -148,6 +156,31 @@ main {
   .rate {
     width: 45%; } }
 
+@media only screen and (min-width: 475px) and (max-width: 600px) {
+  .home-bg {
+    height: 45vh; } }
+
+@media only screen and (min-width: 601px) and (max-width: 750px) {
+  .slogan {
+    margin: 8vh auto; }
+  .home-bg {
+    width: 85%;
+    height: 55vh; } }
+
+@media only screen and (min-width: 751px) and (max-width: 1000px) {
+  .slogan {
+    margin: 8vh auto; }
+  .home-bg {
+    width: 80%;
+    height: 60vh; } }
+
+@media only screen and (min-width: 1001px) {
+  .slogan {
+    margin: 7vh auto; }
+  .home-bg {
+    width: 80%;
+    height: 60vh; } }
+
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .slogan {
     font-size: 22px; }
@@ -160,12 +193,13 @@ main {
 
 @media only screen and (min-width: 1000px) {
   .slogan {
-    font-size: 24px; }
+    font-size: 26px; }
   .brand {
-    font-size: 38px; }
+    font-size: 50px; }
   .searchbar {
-    width: 50%; }
+    width: 50%;
+    height: 50px; }
   input {
-    font-size: 18px; }
+    font-size: 22px; }
   .city-name, .scores-header {
     font-size: 24px; } }
