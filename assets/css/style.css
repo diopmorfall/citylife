@@ -79,6 +79,8 @@ input {
   font-style: italic;
   color: #303030;
   background-color: inherit; }
+  input:focus {
+    background-color: initial; }
 
 button {
   width: 15%;
@@ -90,8 +92,7 @@ button {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  height: 40vh;
-  border: 2px solid lime; }
+  height: 40vh; }
 
 .error {
   width: 85%;
@@ -115,13 +116,12 @@ main {
 
 .summary, .scores {
   width: 85%;
-  margin: auto;
-  border-radius: 20px; }
+  margin: auto; }
 
 .summary {
   padding: 15px;
   margin-bottom: 50px;
-  line-height: 20px;
+  line-height: 25px;
   font-style: italic; }
 
 .scores {
@@ -137,24 +137,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   height: 40px;
-  margin-bottom: 20px;
-  border-radius: 20px; }
-
-@media only screen and (min-width: 600px) {
-  .summary {
-    width: 60%; }
-  .scores {
-    width: 90%;
-    border: 2px solid brown; }
-  .desk-tab-row {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
-  .rate {
-    width: 45%; } }
+  margin-bottom: 20px; }
 
 @media only screen and (min-width: 475px) and (max-width: 600px) {
   .home-bg {
@@ -179,27 +162,86 @@ main {
     margin: 7vh auto; }
   .home-bg {
     width: 80%;
-    height: 60vh; } }
+    height: 55vh; } }
+
+@media only screen and (min-width: 600px) {
+  .error {
+    font-size: 17px; }
+  .summary {
+    width: 70%;
+    line-height: 30px; }
+  .scores {
+    width: 75%; } }
+
+@media only screen and (min-width: 750px) {
+  .scores {
+    width: 85%; }
+  .desk-tab-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  .rate {
+    width: 45%; } }
 
 @media only screen and (min-width: 600px) and (max-width: 999px) {
   .slogan {
-    font-size: 22px; }
+    font-size: 20px; }
   .brand {
     font-size: 34px; }
   .searchbar {
     width: 65%; }
   .city-name, .scores-header {
-    font-size: 22px; } }
+    font-size: 22px; }
+  .summary {
+    font-size: 18px; }
+  .rate span {
+    font-size: 17px; } }
 
 @media only screen and (min-width: 1000px) {
   .slogan {
-    font-size: 26px; }
+    font-size: 21px; }
   .brand {
-    font-size: 50px; }
+    font-size: 36px; }
   .searchbar {
     width: 50%;
-    height: 50px; }
+    border-radius: 30px; }
   input {
-    font-size: 22px; }
+    font-size: 16px; }
   .city-name, .scores-header {
-    font-size: 24px; } }
+    font-size: 24px; }
+  .summary {
+    width: 60%;
+    font-size: 19px; }
+  .rate h4, .rate span {
+    font-size: 18px; } }
+
+@media only screen and (min-width: 1200px) {
+  .searchbar {
+    height: 50px; }
+  .error {
+    font-size: 20px; }
+  .summary {
+    font-size: 21px;
+    line-height: 40px; }
+  .scores-header {
+    font-size: 30px; }
+  .rate h4, .rate span {
+    font-size: 20px; } }
+
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  .slogan {
+    font-size: 16px;
+    margin: 8vh auto; }
+  .brand {
+    font-size: 30px;
+    margin-bottom: 15px; }
+  .searchbar {
+    height: 40px; }
+  .error {
+    margin: 10px auto; }
+  .home-bg {
+    height: 40vh;
+    width: 50%; } }
