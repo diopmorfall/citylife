@@ -1,4 +1,4 @@
-import { showErrorMessage } from "./animations";
+import { showData, showErrorMessage } from "./animations";
 import { City } from "./city";
 
 export async function fetchUrl(city){
@@ -10,6 +10,7 @@ export async function fetchUrl(city){
         //console.log(cityDetails);
         let cityObj = new City(await response.json());
         console.log(cityObj);
+        showData(cityObj);
     } catch(error){
         showErrorMessage();
     }

@@ -8,7 +8,4 @@ export const submitButton = form.lastElementChild;
 export const cityName = document.querySelector(".city-name");
 export const citySummary = document.querySelector(".summary");
 
-export const scores = document.querySelectorAll(".rate");
-export const scoreIcon = document.querySelectorAll(scores.firstElementChild);
-export const scoreCategory = document.querySelectorAll(scores.firstElementChild);
-export const scoreValue = document.querySelectorAll(scores.firstElementChild);
+export const scoresContainer = document.querySelector(".scores");
