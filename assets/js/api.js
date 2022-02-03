@@ -3,6 +3,7 @@ import { City } from "./city";
 
 export async function fetchUrl(city){
     try{
+        //todo: do it with axios and lodash
         let response = await fetch(`https://api.teleport.org/api/urban_areas/slug:${city.replace(/ /g, "-")}/scores/`);
         if(!response.ok) throw new Error();
 

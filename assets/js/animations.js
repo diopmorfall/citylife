@@ -1,4 +1,4 @@
-import { searchSection, citySummary, scoresContainer } from "./dom-elements";
+import { introSection, citySummary, scoresContainer, createNewElement, createRateCard, createRateCardsContainer } from "./dom-elements";
 
 export async function showErrorMessage(){
     if(document.querySelector(".error")) return;
@@ -8,7 +8,7 @@ export async function showErrorMessage(){
     let errorMessage = createNewElement("p", "error");
     errorMessage.textContent = "Error: the city either isn't a big one, or has been mistyped";
     //todo: a shorter and clearer message here
-    searchSection.append(errorMessage);
+    introSection.append(errorMessage);
 }
 
 export async function showData(city){
@@ -19,34 +19,4 @@ export async function showData(city){
     //console.log(rateCards);
     createRateCardsContainer(rateCards);
     
-}
-
-function createNewElement(tag, className){
-    let element = document.createElement(tag);
-    if(className) element.setAttribute("class", className);
-    return element;
-}
-
-function createRateCard(category){
-    let rate = createNewElement("div", "rate");
-    let rateName = createNewElement("h4");
-    rateName.textContent = category.name;
-    let rateScore = createNewElement("p");
-    rateScore.textContent = `${category.score.toFixed(1)}/10`;
-    //todo: add the icon
-    rate.append(rateName);
-    rate.append(rateScore);
-    //console.log(rate);
-    return rate;
-}
-
-function createRateCardsContainer(rateCards){ //* if we could refactor this
-    for(let i = 0; i < rateCards.length; i++){
-        if(i % 2 != 0 || i == 16){
-            let desktopRatesContainer = createNewElement("div", "desk-tab-row");
-            desktopRatesContainer.append(rateCards[i]);
-            if(i % 2 != 0) desktopRatesContainer.prepend(rateCards[i - 1]);
-            scoresContainer.append(desktopRatesContainer);
-        }
-    }
 }

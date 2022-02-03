@@ -1,21 +1,21 @@
-.flex, .flex-row, .flex-row-space-around, .searchbar, .rate, .flex-column, .flex-column-space-around, main, .scores, .desk-tab-row, body, .search {
+.flex, .flex-row, .flex-row-space-around, .rate, .searchbar, .flex-column, .flex-column-space-around, main, .scores, .desk-tab-row, body, .home, .intro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
 
-.flex-row, .flex-row-space-around, .searchbar, .rate {
+.flex-row, .flex-row-space-around, .rate, .searchbar {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row; }
 
-.flex-column, .flex-column-space-around, main, .scores, .desk-tab-row, body, .search {
+.flex-column, .flex-column-space-around, main, .scores, .desk-tab-row, body, .home, .intro {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.flex-row-space-around, .searchbar, .rate {
+.flex-row-space-around, .rate {
   -ms-flex-pack: distribute;
       justify-content: space-around; }
 
@@ -33,18 +33,24 @@
 body {
   width: 100%; }
 
-.search {
+.home {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
   background-color: #f2f2f2; }
 
+.intro {
+  width: 100%; }
+
 .slogan {
   font-size: 15px;
   font-style: italic;
   font-weight: 500;
-  margin: 15vh auto 13vh auto;
+  margin: 10vh auto;
   color: #3f3d56; }
 
 .brand {
@@ -62,18 +68,19 @@ body {
   width: 75%;
   height: 40px;
   margin: 0 auto;
+  padding-left: 10px;
   background-color: #f2f2f2;
   opacity: 0.75;
   -webkit-box-shadow: inset 0px 1px 5px 0px #3f3d56;
           box-shadow: inset 0px 1px 5px 0px #3f3d56; }
 
 input, button {
-  height: 80%;
+  height: 75%;
   border: none;
   outline: none; }
 
 input {
-  width: 65%;
+  width: 80%;
   text-align: center;
   font-style: italic;
   font-weight: bold;
@@ -83,16 +90,19 @@ input {
     background-color: initial; }
 
 button {
-  width: 15%;
+  width: 20%;
   background: none; }
+  button img {
+    height: 100%;
+    margin: auto;
+    -webkit-filter: brightness(0) saturate(100%) invert(24%) sepia(6%) saturate(2214%) hue-rotate(205deg) brightness(93%) contrast(93%);
+            filter: brightness(0) saturate(100%) invert(24%) sepia(6%) saturate(2214%) hue-rotate(205deg) brightness(93%) contrast(93%); }
 
 .home-bg {
-  position: absolute;
-  bottom: 0;
   -o-object-fit: contain;
      object-fit: contain;
   width: 95%;
-  height: 45vh; }
+  height: 50vh; }
 
 .error {
   width: 85%;
@@ -141,8 +151,6 @@ main {
   border: 2px solid red; }
 
 @media only screen and (min-width: 600px) {
-  .slogan {
-    margin: 8vh auto; }
   .error {
     font-size: 17px; }
   .summary {
@@ -151,13 +159,7 @@ main {
   .scores {
     width: 75%; } }
 
-@media only screen and (min-width: 600px) and (max-width: 750px) {
-  .home-bg {
-    height: 55vh; } }
-
 @media only screen and (min-width: 750px) {
-  .home-bg {
-    height: 55vh; }
   .scores {
     width: 85%; }
   .desk-tab-row {
@@ -185,18 +187,29 @@ main {
     font-size: 17px; } }
 
 @media only screen and (min-width: 1000px) {
+  .home {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .intro, .home-bg {
+    height: 100%; }
   .slogan {
-    font-size: 18px; }
+    font-size: 18px;
+    margin: 20vh auto; }
   .brand {
     font-size: 30px; }
   .searchbar {
-    width: 45%; }
+    width: 80%;
+    height: 50px; }
   input {
     font-size: 16px; }
+  .error {
+    font-size: 28px; }
+  .home-bg {
+    height: 60vh; }
   .city-name, .scores-header {
     font-size: 24px; }
-  .home-bg {
-    height: 55vh; }
   .summary {
     width: 60%;
     font-size: 19px; }
@@ -205,11 +218,13 @@ main {
 
 @media only screen and (min-width: 1200px) {
   .slogan {
-    font-size: 20px; }
+    font-size: 24px; }
   .brand {
-    font-size: 34px; }
+    font-size: 48px; }
   .searchbar {
-    height: 50px; }
+    height: 60px; }
+  .home-bg {
+    height: 65vh; }
   .error {
     font-size: 20px; }
   .summary {
@@ -221,16 +236,25 @@ main {
     font-size: 20px; } }
 
 @media only screen and (max-height: 500px) and (orientation: landscape) {
+  .home {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .intro, .home-bg {
+    height: 100%; }
+  .intro {
+    padding-left: 10px; }
   .slogan {
-    font-size: 14px;
-    margin: 8vh auto; }
+    font-size: 12px;
+    margin: 20vh auto; }
   .brand {
     font-size: 26px;
     margin-bottom: 15px; }
   .searchbar {
-    height: 40px; }
+    height: 40px;
+    width: 80%; }
   .error {
     margin: 10px auto; }
   .home-bg {
-    height: 50vh;
-    width: 60%; } }
+    height: 65vh; } }
