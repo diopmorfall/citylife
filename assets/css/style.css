@@ -38,38 +38,37 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
-  background-color: #303030; }
+  background-color: #f2f2f2; }
 
 .slogan {
-  font-size: 18px;
+  font-size: 15px;
   font-style: italic;
-  margin: 15vh auto;
-  color: #e2e3e5; }
+  font-weight: 500;
+  margin: 15vh auto 13vh auto;
+  color: #3f3d56; }
 
 .brand {
   margin: 0 auto 30px auto;
-  font-style: italic;
-  color: #e2e3e5; }
+  font-size: 28px;
+  font-style: italic; }
   .brand a {
     text-decoration: none;
-    color: #e2e3e5; }
+    color: #3f3d56; }
 
 .searchbar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
   width: 75%;
   height: 40px;
   margin: 0 auto;
-  background-color: #e2e3e5;
-  opacity: 0.75; }
-
-.searchbar, input, button {
-  border-radius: 20px; }
+  background-color: #f2f2f2;
+  opacity: 0.75;
+  -webkit-box-shadow: inset 0px 1px 5px 0px #3f3d56;
+          box-shadow: inset 0px 1px 5px 0px #3f3d56; }
 
 input, button {
-  height: 75%;
+  height: 80%;
   border: none;
   outline: none; }
 
@@ -77,7 +76,8 @@ input {
   width: 65%;
   text-align: center;
   font-style: italic;
-  color: #303030;
+  font-weight: bold;
+  color: #3f3d56;
   background-color: inherit; }
   input:focus {
     background-color: initial; }
@@ -89,15 +89,15 @@ button {
 .home-bg {
   position: absolute;
   bottom: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 40vh; }
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 95%;
+  height: 45vh; }
 
 .error {
   width: 85%;
   margin: 25px auto;
-  color: red;
+  color: #ff6584;
   font-style: italic;
   text-align: center;
   z-index: 2; }
@@ -107,8 +107,8 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
   padding-top: 50px;
-  background-color: #e2e3e5;
-  color: #303030; }
+  background-color: #f2f2f2;
+  color: #3f3d56; }
 
 .city-name, .scores-header {
   text-align: center;
@@ -137,34 +137,12 @@ main {
       -ms-flex-align: center;
           align-items: center;
   height: 40px;
-  margin-bottom: 20px; }
-
-@media only screen and (min-width: 475px) and (max-width: 600px) {
-  .home-bg {
-    height: 45vh; } }
-
-@media only screen and (min-width: 601px) and (max-width: 750px) {
-  .slogan {
-    margin: 8vh auto; }
-  .home-bg {
-    width: 85%;
-    height: 55vh; } }
-
-@media only screen and (min-width: 751px) and (max-width: 1000px) {
-  .slogan {
-    margin: 8vh auto; }
-  .home-bg {
-    width: 80%;
-    height: 60vh; } }
-
-@media only screen and (min-width: 1001px) {
-  .slogan {
-    margin: 7vh auto; }
-  .home-bg {
-    width: 80%;
-    height: 55vh; } }
+  margin-bottom: 20px;
+  border: 2px solid red; }
 
 @media only screen and (min-width: 600px) {
+  .slogan {
+    margin: 8vh auto; }
   .error {
     font-size: 17px; }
   .summary {
@@ -173,7 +151,13 @@ main {
   .scores {
     width: 75%; } }
 
+@media only screen and (min-width: 600px) and (max-width: 750px) {
+  .home-bg {
+    height: 55vh; } }
+
 @media only screen and (min-width: 750px) {
+  .home-bg {
+    height: 55vh; }
   .scores {
     width: 85%; }
   .desk-tab-row {
@@ -186,13 +170,13 @@ main {
   .rate {
     width: 45%; } }
 
-@media only screen and (min-width: 600px) and (max-width: 999px) {
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
   .slogan {
-    font-size: 20px; }
+    font-size: 16px; }
   .brand {
-    font-size: 34px; }
+    font-size: 30px; }
   .searchbar {
-    width: 65%; }
+    width: 55%; }
   .city-name, .scores-header {
     font-size: 22px; }
   .summary {
@@ -202,16 +186,17 @@ main {
 
 @media only screen and (min-width: 1000px) {
   .slogan {
-    font-size: 21px; }
+    font-size: 18px; }
   .brand {
-    font-size: 36px; }
+    font-size: 30px; }
   .searchbar {
-    width: 50%;
-    border-radius: 30px; }
+    width: 45%; }
   input {
     font-size: 16px; }
   .city-name, .scores-header {
     font-size: 24px; }
+  .home-bg {
+    height: 55vh; }
   .summary {
     width: 60%;
     font-size: 19px; }
@@ -219,6 +204,10 @@ main {
     font-size: 18px; } }
 
 @media only screen and (min-width: 1200px) {
+  .slogan {
+    font-size: 20px; }
+  .brand {
+    font-size: 34px; }
   .searchbar {
     height: 50px; }
   .error {
@@ -226,22 +215,22 @@ main {
   .summary {
     font-size: 21px;
     line-height: 40px; }
-  .scores-header {
-    font-size: 30px; }
+  .city-name, .scores-header {
+    font-size: 26px; }
   .rate h4, .rate span {
     font-size: 20px; } }
 
 @media only screen and (max-height: 500px) and (orientation: landscape) {
   .slogan {
-    font-size: 16px;
+    font-size: 14px;
     margin: 8vh auto; }
   .brand {
-    font-size: 30px;
+    font-size: 26px;
     margin-bottom: 15px; }
   .searchbar {
     height: 40px; }
   .error {
     margin: 10px auto; }
   .home-bg {
-    height: 40vh;
-    width: 50%; } }
+    height: 50vh;
+    width: 60%; } }
