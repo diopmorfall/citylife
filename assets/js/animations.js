@@ -1,4 +1,4 @@
-import { introSection, citySummary, scoresContainer, createNewElement, createRateCard, createRateCardsContainer } from "./dom-elements";
+import { introSection, citySummary, createNewElement, createRateCard, createRateCardsContainer } from "./dom-elements";
 
 export async function showErrorMessage(){
     if(document.querySelector(".error")) return;
@@ -12,9 +12,12 @@ export async function showErrorMessage(){
 }
 
 export async function showData(city){
-    citySummary.innerHTML = city.summary + `<br><b>Teleport score:</b> ${city.teleportScore.toFixed(1)}`;
+    citySummary.innerHTML = city.summary;
 
     let rateCards = [];
+    
+    city.categories.push({name: "Teleport score", score: city.teleportScore});
+    //console.log(city.categories);
     city.categories.forEach(category => rateCards.push(createRateCard(category)));
     //console.log(rateCards);
     createRateCardsContainer(rateCards);

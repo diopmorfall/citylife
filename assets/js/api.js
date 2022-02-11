@@ -10,7 +10,7 @@ export async function fetchUrl(city){
         //let cityDetails = await response.json();
         //console.log(cityDetails);
         let cityObj = new City(await response.json());
-        console.log(cityObj);
+        //console.log(cityObj);
         showData(cityObj);
     } catch(error){
         showErrorMessage();

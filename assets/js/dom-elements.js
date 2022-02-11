@@ -20,16 +20,20 @@ export function createNewElement(tag, className){
 export function createRateCard(category){
     let rate = createNewElement("div", "rate");
 
+    let rateIcon = createNewElement("img");
+    //rateIcon.src = `./../assets/img/${/rateName.textContent/gi}.svg`;
+    //todo: let regex = new RegExp(`\\b${input}\\b`, "i"); get the image
+    //rate.append(rateIcon);
+
     let rateName = createNewElement("h4");
     rateName.textContent = category.name;
-    let rateIcon = createNewElement("img");
-    rateIcon.src = `./../assets/img/${/rateName.textContent/gi}.svg`;
-    //todo: let regex = new RegExp(`\\b${input}\\b`, "i"); get the image
 
     let rateScore = createNewElement("p");
-    rateScore.textContent = `${category.score.toFixed(1)}/10`;
-
-    rate.append(rateIcon);
+    
+    rateScore.textContent = rateName.textContent == "Teleport score" ? 
+        `${category.score.toFixed(1)}` :
+        `${category.score.toFixed(1)}/10`;
+    
     rate.append(rateName);
     rate.append(rateScore);
     //console.log(rate);
@@ -38,10 +42,10 @@ export function createRateCard(category){
 
 export function createRateCardsContainer(rateCards){ //* if we could refactor this
     for(let i = 0; i < rateCards.length; i++){
-        if(i % 2 != 0 || i == 16){
+        if(i % 2 != 0){
             let desktopRatesContainer = createNewElement("div", "desk-tab-row");
+            desktopRatesContainer.append(rateCards[i - 1]);
             desktopRatesContainer.append(rateCards[i]);
-            if(i % 2 != 0) desktopRatesContainer.prepend(rateCards[i - 1]);
             scoresContainer.append(desktopRatesContainer);
         }
     }
