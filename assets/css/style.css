@@ -23,6 +23,12 @@
   -ms-flex-pack: distribute;
       justify-content: space-around; }
 
+.icon {
+  height: 100%;
+  margin: auto;
+  -webkit-filter: brightness(0) saturate(100%) invert(24%) sepia(6%) saturate(2214%) hue-rotate(205deg) brightness(93%) contrast(93%);
+          filter: brightness(0) saturate(100%) invert(24%) sepia(6%) saturate(2214%) hue-rotate(205deg) brightness(93%) contrast(93%); }
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -92,11 +98,6 @@ input {
 button {
   width: 20%;
   background: none; }
-  button img {
-    height: 100%;
-    margin: auto;
-    -webkit-filter: brightness(0) saturate(100%) invert(24%) sepia(6%) saturate(2214%) hue-rotate(205deg) brightness(93%) contrast(93%);
-            filter: brightness(0) saturate(100%) invert(24%) sepia(6%) saturate(2214%) hue-rotate(205deg) brightness(93%) contrast(93%); }
 
 .home-bg {
   -o-object-fit: contain;
@@ -149,6 +150,9 @@ main {
   height: 40px;
   margin-bottom: 20px;
   border: 2px solid red; }
+
+.rate .icon {
+  margin: initial; }
 
 @media only screen and (min-width: 600px) {
   .error {

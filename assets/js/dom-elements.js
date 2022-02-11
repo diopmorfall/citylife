@@ -20,13 +20,12 @@ export function createNewElement(tag, className){
 export function createRateCard(category){
     let rate = createNewElement("div", "rate");
 
-    let rateIcon = createNewElement("img");
-    //rateIcon.src = `./../assets/img/${/rateName.textContent/gi}.svg`;
-    //todo: let regex = new RegExp(`\\b${input}\\b`, "i"); get the image
-    //rate.append(rateIcon);
-
     let rateName = createNewElement("h4");
     rateName.textContent = category.name;
+
+    let rateIcon = createNewElement("img", "icon");
+    rateIcon.src = `./../assets/img/${rateName.textContent.toLowerCase()}.svg`;
+    //console.log(rateIcon.src);
 
     let rateScore = createNewElement("p");
     
@@ -34,6 +33,7 @@ export function createRateCard(category){
         `${category.score.toFixed(1)}` :
         `${category.score.toFixed(1)}/10`;
     
+    rate.append(rateIcon);
     rate.append(rateName);
     rate.append(rateScore);
     //console.log(rate);
