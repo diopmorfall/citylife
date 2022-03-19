@@ -1,9 +1,7 @@
-import { introSection, citySummary, createNewElement, createRateCard, createRateCardsContainer } from "./dom-elements";
+import { introSection, resultSection, citySummary, createNewElement, createRateCard, createRateCardsContainer, rateCards, updateScores } from "./dom-elements";
 
 export async function showErrorMessage(){
     if(document.querySelector(".error")) return;
-    
-    //console.log("Element creation");
     
     let errorMessage = createNewElement("p", "error");
     errorMessage.textContent = "Error: the city either isn't a big one, or has been mistyped";
@@ -14,12 +12,17 @@ export async function showErrorMessage(){
 export async function showData(city){
     citySummary.innerHTML = city.summary;
 
-    let rateCards = [];
-    
-    city.categories.push({name: "Teleport score", score: city.teleportScore});
-    //console.log(city.categories);
-    city.categories.forEach(category => rateCards.push(createRateCard(category)));
-    //console.log(rateCards);
-    createRateCardsContainer(rateCards);
-    
+    if(rateCards.length == 0){ 
+        //console.log("No cards here, we're creating them", rateCards.length);
+        let rates = [];
+        city.categories.forEach(category => rates.push(createRateCard(category)));
+        createRateCardsContainer(rates);
+        resultSection.style.display = 'flex';
+    } else {
+        //console.log("Cards are here", rateCards.length);
+        for(let card of rateCards){
+            let currentCategory = city.categories.find(category => category.name === card.children[1].textContent);
+            updateScores(card, currentCategory.score);
+        }
+    }
 }

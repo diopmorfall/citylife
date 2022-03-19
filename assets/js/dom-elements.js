@@ -10,6 +10,7 @@ export const cityName = document.querySelector(".city-name");
 export const citySummary = document.querySelector(".summary");
 
 export const scoresContainer = document.querySelector(".scores");
+export let rateCards = document.getElementsByClassName("rate");
 
 export function createNewElement(tag, className){
     let element = document.createElement(tag);
@@ -19,19 +20,15 @@ export function createNewElement(tag, className){
 
 export function createRateCard(category){
     let rate = createNewElement("div", "rate");
-
     let rateName = createNewElement("h4");
-    rateName.textContent = category.name;
-
     let rateIcon = createNewElement("img", "icon");
+    let rateScore = createNewElement("p");
+
+    rateName.textContent = category.name;
+    rateScore.textContent = formatScore(category.score, rateName.textContent);
+    
     rateIcon.src = `./../assets/img/${rateName.textContent.toLowerCase()}.svg`;
     //console.log(rateIcon.src);
-
-    let rateScore = createNewElement("p");
-    
-    rateScore.textContent = rateName.textContent == "Teleport score" ? 
-        `${category.score.toFixed(1)}` :
-        `${category.score.toFixed(1)}/10`;
     
     rate.append(rateIcon);
     rate.append(rateName);
@@ -40,13 +37,23 @@ export function createRateCard(category){
     return rate;
 }
 
-export function createRateCardsContainer(rateCards){ //* if we could refactor this
-    for(let i = 0; i < rateCards.length; i++){
+export function createRateCardsContainer(rates){ //* if we could refactor this
+    for(let i = 0; i < rates.length; i++){
         if(i % 2 != 0){
             let desktopRatesContainer = createNewElement("div", "desk-tab-row");
-            desktopRatesContainer.append(rateCards[i - 1]);
-            desktopRatesContainer.append(rateCards[i]);
+            desktopRatesContainer.append(rates[i - 1]);
+            desktopRatesContainer.append(rates[i]);
             scoresContainer.append(desktopRatesContainer);
         }
     }
+}
+
+export function updateScores(card, score){
+    //console.log("Card", card, "category", score);
+    card.children[2].textContent = formatScore(score, card.children[1].textContent);
+}
+
+function formatScore(value, categoryTitle){
+    return categoryTitle == "Teleport score" ? 
+        value.toFixed(1) : `${value.toFixed(1)}/10`;
 }

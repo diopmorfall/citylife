@@ -1,23 +1,20 @@
 export class City {
     constructor(details){
         this.summary = details.summary;
-        this.teleportScore = details.teleport_city_score;
         this.categories = [];
-        details.categories.forEach(category => { //* return the properties of each object
+        
+        details.categories.forEach(category => {
             this.categories.push({
                 name: category.name,
                 score: category.score_out_of_10,
                 color: category.color,
             });
         });
+
+        this.categories.push({
+            name: "Teleport score",
+            score: details.teleport_city_score
+        });
     }
     
 }
-
-/*
-return {
-                name: category.name,
-                score: category.score_out_of_10,
-                color: category.color,
-            }
-*/
