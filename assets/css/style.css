@@ -1,9 +1,9 @@
-.flex, .flex-row, .flex-row-space-around, .rate, .searchbar, .flex-column, .flex-column-space-around, main, .scores, .desk-tab-row, body, .home, .intro {
+.flex, .flex-row, .flex-row-space-around, .flex-row-space-between, .rate, .searchbar, .flex-column, .flex-column-space-around, main, .scores, .desk-tab-row, body, .home, .intro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
 
-.flex-row, .flex-row-space-around, .rate, .searchbar {
+.flex-row, .flex-row-space-around, .flex-row-space-between, .rate, .searchbar {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -15,13 +15,18 @@
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.flex-row-space-around, .rate {
+.flex-row-space-around {
   -ms-flex-pack: distribute;
       justify-content: space-around; }
 
 .flex-column-space-around, main, .scores, .desk-tab-row {
   -ms-flex-pack: distribute;
       justify-content: space-around; }
+
+.flex-row-space-between, .rate {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
 .icon {
   height: 100%;
@@ -119,23 +124,25 @@ main {
           justify-content: center;
   padding-top: 50px;
   background-color: #f2f2f2;
-  color: #3f3d56; }
+  color: #3f3d56;
+  display: none; }
 
 .city-name, .scores-header {
   text-align: center;
   margin-bottom: 30px; }
 
 .summary, .scores {
-  width: 85%;
   margin: auto; }
 
 .summary {
+  width: 85%;
   padding: 15px;
   margin-bottom: 50px;
   line-height: 25px;
   font-style: italic; }
 
 .scores {
+  width: 80%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
@@ -148,11 +155,17 @@ main {
       -ms-flex-align: center;
           align-items: center;
   height: 40px;
-  margin-bottom: 20px;
-  border: 2px solid red; }
+  margin-bottom: 40px; }
 
 .rate .icon {
-  margin: initial; }
+  margin: initial;
+  height: 75%; }
+
+.rate:nth-of-type(3), .rate:nth-of-type(8), .rate:nth-of-type(15) {
+  height: 30px; }
+
+.rate .icon:nth-of-type(5) {
+  height: 50px; }
 
 @media only screen and (min-width: 600px) {
   .error {
