@@ -1,17 +1,22 @@
 import { introSection, resultSection, citySummary, createNewElement, createRateCard, createRateCardsContainer, rateCards, updateScores } from "./dom-elements";
 
-export async function showErrorMessage(){
+export async function showErrorMessage(status){
     if(document.querySelector(".error")) return;
     
     let errorMessage = createNewElement("p", "error");
-    errorMessage.textContent = "Error: the city either isn't a big one, or has been mistyped";
+    
+    errorMessage.textContent = status == 404 ? 
+        "City not found, make sure you typed it right" : 
+        "Something went wrong, please try later";
     //todo: a shorter and clearer message here
     introSection.append(errorMessage);
 }
 
 export async function showData(city){
-    citySummary.innerHTML = city.summary;
+    if(document.querySelector(".error")) //todo: refactor needed
+        introSection.removeChild(document.querySelector(".error"));
 
+    citySummary.innerHTML = city.summary;
     if(rateCards.length == 0){ 
         //console.log("No cards here, we're creating them", rateCards.length);
         let rates = [];
@@ -25,4 +30,5 @@ export async function showData(city){
             updateScores(card, currentCategory.score);
         }
     }
+    resultSection.scrollIntoView({behavior: "smooth"});
 }
