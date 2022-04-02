@@ -1,13 +1,11 @@
 import { introSection, resultSection, citySummary, createNewElement, createRateCard, createRateCardsContainer, rateCards, updateScores } from "./dom-elements";
 
-export async function showErrorMessage(status){
+export async function showErrorMessage(message){
     if(document.querySelector(".error")) return;
     
     let errorMessage = createNewElement("p", "error");
     
-    errorMessage.textContent = status == 404 ? 
-        "City not found, make sure you typed it right" : 
-        "Something went wrong, please try later";
+    errorMessage.textContent = message;
     //todo: a shorter and clearer message here
     introSection.append(errorMessage);
 }
