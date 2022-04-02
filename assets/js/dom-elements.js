@@ -24,7 +24,7 @@ export function createRateCard(category){
     let rateIcon = createNewElement("img", "icon");
     let rateScore = createNewElement("p");
 
-    rateName.textContent = category.name;
+    rateName.textContent = category.name.toUpperCase();
     rateScore.textContent = formatScore(category.score, rateName.textContent);
     
     rateIcon.src = `./../assets/img/${rateName.textContent.toLowerCase()}.svg`;

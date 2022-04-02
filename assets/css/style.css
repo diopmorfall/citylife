@@ -161,11 +161,11 @@ main {
   margin: initial;
   height: 75%; }
 
-.rate:nth-of-type(3), .rate:nth-of-type(8), .rate:nth-of-type(15) {
-  height: 30px; }
+.rate:nth-of-type(4) .icon {
+  width: 500px; }
 
-.rate .icon:nth-of-type(5) {
-  height: 50px; }
+.rate h4 {
+  font-size: 15px; }
 
 @media only screen and (min-width: 600px) {
   .error {
