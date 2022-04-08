@@ -1,19 +1,16 @@
+import { get } from "lodash";
 export class City {
     constructor(details){
-        this.summary = details.summary;
-        this.categories = [];
-        
-        details.categories.forEach(category => {
-            this.categories.push({
-                name: category.name,
-                score: category.score_out_of_10,
-                color: category.color,
-            });
+        this.summary = get(details, "summary", 'City overview not available');
+        this.categories = get(details, 'categories', []);
+        this.categories.forEach(category => {
+            category.score = get(category, 'score_out_of_10', 'n.a.');
+            delete category.color, category.score_out_of_10;
         });
 
         this.categories.push({
             name: "Teleport score",
-            score: details.teleport_city_score
+            score: get(details, "teleport_city_score", "n.a.")
         });
     }
     
