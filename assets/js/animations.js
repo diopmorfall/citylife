@@ -1,13 +1,13 @@
 import { introSection, resultSection, citySummary, createNewElement, createRateCard, createRateCardsContainer, rateCards, updateScores } from "./dom-elements";
 
-export async function showErrorMessage(message){
+export async function showErrorMessage(message, targetElement){
     if(document.querySelector(".error")) return;
     
     let errorMessage = createNewElement("p", "error");
     
     errorMessage.textContent = message;
     //todo: a shorter and clearer message here
-    introSection.append(errorMessage);
+    targetElement.append(errorMessage);
 }
 
 export async function showData(city){
@@ -15,6 +15,9 @@ export async function showData(city){
         introSection.removeChild(document.querySelector(".error"));
 
     citySummary.innerHTML = city.summary;
+    if(citySummary.innerHTML === "City overview not available")
+        showErrorMessage("We're sorry that some values weren't correctly retrieved, please try later", resultSection);
+
     if(rateCards.length == 0){ 
         //console.log("No cards here, we're creating them", rateCards.length);
         let rates = [];
@@ -24,7 +27,10 @@ export async function showData(city){
     } else {
         //console.log("Cards are here", rateCards.length);
         for(let card of rateCards){
-            let currentCategory = city.categories.find(category => category.name === card.children[1].textContent);
+            let currentCategory = city.categories.find(
+                category => category.name.toUpperCase() === card.children[1].textContent
+            );
+
             updateScores(card, currentCategory.score);
         }
     }

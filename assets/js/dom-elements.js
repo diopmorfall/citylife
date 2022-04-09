@@ -1,3 +1,5 @@
+import { showErrorMessage } from "./animations";
+
 export const introSection = document.querySelector(".intro");
 export const slogan = document.querySelector(".slogan");
 export const siteName = document.querySelector(".brand");
@@ -54,6 +56,11 @@ export function updateScores(card, score){
 }
 
 function formatScore(value, categoryTitle){
+    if(typeof value === "string"){
+        showErrorMessage("We're sorry some values weren't correctly retrieved, please try later", resultSection);
+        return value;
+    }
+
     return categoryTitle == "Teleport score" ? 
         value.toFixed(1) : `${value.toFixed(1)}/10`;
 }

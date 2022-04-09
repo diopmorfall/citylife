@@ -5,7 +5,8 @@ export class City {
         this.categories = get(details, 'categories', []);
         this.categories.forEach(category => {
             category.score = get(category, 'score_out_of_10', 'n.a.');
-            delete category.color, category.score_out_of_10;
+            delete category.color;
+            delete category.score_out_of_10;
         });
 
         this.categories.push({
