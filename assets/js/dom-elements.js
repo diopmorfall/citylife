@@ -61,6 +61,15 @@ function formatScore(value, categoryTitle){
         return value;
     }
 
-    return categoryTitle == "Teleport score" ? 
-        value.toFixed(1) : `${value.toFixed(1)}/10`;
+    value = value.toFixed(1);
+
+    if(value == Math.floor(value)){
+        value = Math.floor(value);
+    }
+
+    if(categoryTitle === "TELEPORT SCORE"){
+        return value;
+    }
+
+    return `${value}/10`;
 }
