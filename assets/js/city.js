@@ -10,7 +10,7 @@ export class City {
         });
 
         this.categories.push({
-            name: "Teleport score",
+            name: "Overall score",
             score: get(details, "teleport_city_score", "n.a.")
         });
     }

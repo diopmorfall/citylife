@@ -34,5 +34,5 @@ export async function showData(city){
             updateScores(card, currentCategory.score);
         }
     }
-    resultSection.scrollIntoView({behavior: "smooth"});
+    resultSection.scrollIntoView(true);
 }

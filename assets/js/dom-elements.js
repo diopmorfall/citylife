@@ -67,7 +67,7 @@ function formatScore(value, categoryTitle){
         value = Math.floor(value);
     }
 
-    if(categoryTitle === "TELEPORT SCORE"){
+    if(categoryTitle === "OVERALL SCORE"){
         return value;
     }
 
