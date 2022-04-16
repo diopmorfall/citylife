@@ -38,6 +38,9 @@
   -webkit-filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(698%) hue-rotate(211deg) brightness(104%) contrast(111%);
           filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(698%) hue-rotate(211deg) brightness(104%) contrast(111%); }
 
+.text-center, input, .error, .city-summary-header, .scores-header, .summary, .rate h4 {
+  text-align: center; }
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -48,7 +51,8 @@
   font-style: italic; }
 
 body {
-  width: 100%; }
+  width: 100%;
+  background-color: #f2f2f2; }
 
 .home {
   -webkit-box-pack: justify;
@@ -57,8 +61,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
-  background-color: #f2f2f2; }
+  height: 100vh; }
 
 .intro {
   width: 100%; }
@@ -84,7 +87,7 @@ body {
   height: 40px;
   margin: 0 auto;
   padding-left: 10px;
-  background-color: #f2f2f2;
+  background-color: inherit;
   opacity: 0.75;
   -webkit-box-shadow: inset 0px 1px 5px 0px #3f3d56;
           box-shadow: inset 0px 1px 5px 0px #3f3d56; }
@@ -96,7 +99,6 @@ input, button {
 
 input {
   width: 80%;
-  text-align: center;
   font-weight: 600;
   color: #3f3d56;
   background-color: inherit;
@@ -123,7 +125,6 @@ button {
   color: #ff6584;
   font-weight: 500;
   font-size: 18px;
-  text-align: center;
   z-index: 2; }
 
 main {
@@ -131,11 +132,9 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
   padding-top: 50px;
-  background-color: #f2f2f2;
   display: none; }
 
 .city-summary-header, .scores-header {
-  text-align: center;
   margin-bottom: 30px;
   font-size: 26px;
   color: #6c63ff; }
@@ -149,8 +148,7 @@ main {
   margin-bottom: 50px;
   line-height: 40px;
   font-weight: 600;
-  font-size: 18px;
-  text-align: center; }
+  font-size: 18px; }
 
 .summary b {
   color: #6c63ff; }
@@ -179,13 +177,18 @@ main {
   width: 500px; }
 
 .rate h4 {
-  font-size: 18px;
-  text-align: center; }
+  font-size: 18px; }
 
 .rate p {
   font-size: 24px;
   font-weight: 600;
   color: #6c63ff; }
+
+.desk-tab-row:last-of-type .rate:last-of-type h4 {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #6c63ff;
+          text-decoration-color: #6c63ff;
+  text-decoration-thickness: 7px; }
 
 @media only screen and (min-width: 600px) {
   .searchbar {
@@ -276,7 +279,7 @@ main {
   .home-bg {
     height: 60vh; }
   .error {
-    font-size: 20px; }
+    font-size: 24px; }
   .summary {
     font-size: 28px; }
   .city-summary-header, .scores-header {
@@ -313,7 +316,7 @@ main {
   .city-summary-header, .scores-header {
     font-size: 30px; }
   .scores {
-    width: 65%;
+    width: 100%;
     margin-top: 30px; }
   .rate h4 {
     font-size: 22px; } }

@@ -28,18 +28,15 @@ export function createRateCard(category){
 
     rateName.textContent = category.name.toUpperCase();
     rateScore.textContent = formatScore(category.score, rateName.textContent);
-    
     rateIcon.src = `./../assets/img/${rateName.textContent.toLowerCase()}.svg`;
-    //console.log(rateIcon.src);
     
     rate.append(rateIcon);
     rate.append(rateName);
     rate.append(rateScore);
-    //console.log(rate);
     return rate;
 }
 
-export function createRateCardsContainer(rates){ //* if we could refactor this
+export function createRateCardsContainer(rates){
     for(let i = 0; i < rates.length; i++){
         if(i % 2 != 0){
             let desktopRatesContainer = createNewElement("div", "desk-tab-row");
@@ -51,7 +48,6 @@ export function createRateCardsContainer(rates){ //* if we could refactor this
 }
 
 export function updateScores(card, score){
-    //console.log("Card", card, "category", score);
     card.children[2].textContent = formatScore(score, card.children[1].textContent);
 }
 
