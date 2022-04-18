@@ -45,7 +45,7 @@ The project must satisfy the following requirements:
 
 I learned how to build a little webapp that handles the response from a third-party API, and that not everything will work as expected: I implemented Axios and Lodash that taught me how to handle those scenarios.
 
-### Continued development
+### Continuous development
 
 I'll surely look up to this one when I'll develop similar projects, I think that handling the data that comes from an API is a  common task we should be able to do
 
