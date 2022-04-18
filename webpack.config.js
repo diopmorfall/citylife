@@ -27,8 +27,19 @@ module.exports = {
 			},
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                type: 'asset/resource',
-            }
+                type: 'asset/resource'
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'img/', 
+                        publicPath: 'img/', 
+                    }
+                }]
+            },
 		],
 	},
 };
