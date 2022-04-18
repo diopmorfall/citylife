@@ -1,3 +1,10 @@
 import '.././css/style.css';
+import { form, inputField } from "./dom-elements";
+import { fetchUrl } from "./api"
 
-console.log("Wororororo");
+window.onload = function(){
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+        fetchUrl(inputField.value);
+    });
+};

@@ -1,6 +1,342 @@
+@font-face {
+  font-family: 'Lemon Melon';
+  src: url(".././font/LemonMelon.ttf") format("truetype"); }
+
+.flex, .flex-row, .flex-row-space-around, .flex-row-space-between, .rate, .searchbar, .flex-column, .flex-column-space-around, main, .scores, .desk-tab-row, body, .home, .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flex-row, .flex-row-space-around, .flex-row-space-between, .rate, .searchbar {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.flex-column, .flex-column-space-around, main, .scores, .desk-tab-row, body, .home, .intro {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.flex-row-space-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.flex-column-space-around, main, .scores, .desk-tab-row {
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.flex-row-space-between, .rate {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.icon {
+  height: 100%;
+  margin: auto;
+  -webkit-filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(698%) hue-rotate(211deg) brightness(104%) contrast(111%);
+          filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(698%) hue-rotate(211deg) brightness(104%) contrast(111%); }
+
+.text-center, input, .error, .city-summary-header, .scores-header, .summary, .rate h4 {
+  text-align: center; }
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  font-family: 'Lemon Melon';
+  font-style: italic; }
+
+body {
+  width: 100%;
+  background-color: #f2f2f2; }
+
+.home {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh; }
+
+.intro {
+  width: 100%; }
+
+.slogan {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 13vh auto 7vh auto;
+  color: #3f3d56; }
+
+.brand {
+  margin: 0 auto 30px auto;
+  font-size: 36px; }
+  .brand a {
+    text-decoration: none;
+    color: #6c63ff; }
+
+.searchbar {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75%;
+  height: 40px;
+  margin: 0 auto;
+  padding-left: 10px;
+  background-color: inherit;
+  opacity: 0.75;
+  -webkit-box-shadow: inset 0px 1px 5px 0px #3f3d56;
+          box-shadow: inset 0px 1px 5px 0px #3f3d56; }
+
+input, button {
+  height: 75%;
+  border: none;
+  outline: none; }
+
+input {
+  width: 80%;
+  font-weight: 600;
+  color: #3f3d56;
+  background-color: inherit;
+  font-size: 20px; }
+  input:focus {
+    background-color: initial; }
+
+button {
+  width: 20%;
+  background: none; }
+  button .icon {
+    -webkit-filter: brightness(0) saturate(100%) invert(23%) sepia(6%) saturate(2448%) hue-rotate(205deg) brightness(94%) contrast(91%);
+            filter: brightness(0) saturate(100%) invert(23%) sepia(6%) saturate(2448%) hue-rotate(205deg) brightness(94%) contrast(91%); }
+
+.home-bg {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 95%;
+  height: 50vh; }
+
+.error {
+  width: 85%;
+  margin: 25px auto;
+  color: #ff6584;
+  font-weight: 500;
+  font-size: 18px;
+  z-index: 2; }
+
+main {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 50px;
+  display: none; }
+
+.city-summary-header, .scores-header {
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: #6c63ff; }
+
+.summary, .scores {
+  margin: auto; }
+
+.summary {
+  width: 85%;
+  padding: 15px;
+  margin-bottom: 50px;
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 18px; }
+
+.summary b {
+  color: #6c63ff; }
+
+.scores {
+  width: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.desk-tab-row {
+  margin-bottom: 5px; }
+
+.rate {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  margin-bottom: 40px; }
+
+.rate .icon {
+  margin: initial;
+  height: 75%; }
+
+.rate:nth-of-type(4) .icon {
+  width: 500px; }
+
+.rate h4 {
+  font-size: 18px; }
+
+.rate p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #6c63ff; }
+
+.desk-tab-row:last-of-type .rate:last-of-type h4 {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #6c63ff;
+          text-decoration-color: #6c63ff;
+  text-decoration-thickness: 7px; }
+
+@media only screen and (min-width: 600px) {
+  .searchbar {
+    width: 60%; }
+  .error {
+    font-size: 20px; }
+  .summary {
+    width: 75%;
+    line-height: 35px; }
+  .scores {
+    width: 75%; } }
+
+@media only screen and (min-width: 750px) {
+  .scores {
+    width: 95%; }
+  .desk-tab-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .rate {
+    width: 40%; } }
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .slogan {
+    font-size: 27px; }
+  .brand {
+    font-size: 42px; }
+  .searchbar {
+    height: 50px; }
+  .city-summary-header, .scores-header {
+    font-size: 30px; }
+  .summary {
+    font-size: 20px; }
+  .rate h4 {
+    font-size: 20px; }
+  .rate p {
+    font-size: 28px; } }
+
+@media only screen and (min-width: 1000px) {
+  .home {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .intro, .home-bg {
+    height: 100%; }
+  .slogan {
+    font-size: 30px;
+    margin: 20vh auto; }
+  .brand {
+    font-size: 50px; }
+  .searchbar {
+    height: 45px; }
+  input {
+    font-size: 28px; }
+  button:hover {
+    cursor: pointer; }
+  .error {
+    font-size: 28px; }
+  .home-bg {
+    height: 50vh; }
+  .city-summary-header, .scores-header {
+    font-size: 40px; }
+  .summary {
+    width: 70%;
+    font-size: 26px;
+    line-height: 60px;
+    margin-bottom: 100px; }
+  .scores {
+    min-width: 80%; }
+  .rate {
+    margin-top: 50px; }
+  .rate h4 {
+    font-size: 26px; }
+  .rate p {
+    font-size: 35px; }
+  .rate .icon {
+    height: 110%; } }
+
+@media only screen and (min-width: 1200px) {
+  .slogan {
+    font-size: 34px; }
+  .brand {
+    font-size: 60px; }
+  .searchbar {
+    height: 60px; }
+  .home-bg {
+    height: 60vh; }
+  .error {
+    font-size: 24px; }
+  .summary {
+    font-size: 28px; }
+  .city-summary-header, .scores-header {
+    font-size: 42px; }
+  .rate h4 {
+    font-size: 32px; }
+  .rate p {
+    font-size: 40px; } }
+
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  .home {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .intro, .home-bg {
+    height: 100%; }
+  .intro {
+    padding-left: 10px; }
+  .slogan {
+    font-size: 22px;
+    margin: 20vh auto; }
+  .brand {
+    font-size: 40px;
+    margin-bottom: 15px; }
+  .searchbar {
+    height: 40px;
+    width: 80%; }
+  .error {
+    margin: 10px auto;
+    font-size: 16px; }
+  .home-bg {
+    height: 65vh; }
+  .city-summary-header, .scores-header {
+    font-size: 30px; }
+  .scores {
+    width: 100%;
+    margin-top: 30px; }
+  .rate h4 {
+    font-size: 22px; } }
+
+@media only screen and (min-width: 900px) and (orientation: portrait) {
+  .home {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .slogan {
+    margin: 12vh auto;
+    font-size: 32px; }
+  .brand {
+    font-size: 60px;
+    margin-bottom: 50px; }
+  .searchbar {
+    height: 70px;
+    width: 65%; }
+  .error {
+    font-size: 32px; }
+  input {
+    font-size: 32px; } }
