@@ -188,7 +188,7 @@ main {
   text-decoration: underline;
   -webkit-text-decoration-color: #6c63ff;
           text-decoration-color: #6c63ff;
-  text-decoration-thickness: 7px; }
+  text-decoration-thickness: 15px; }
 
 @media only screen and (min-width: 600px) {
   .searchbar {
@@ -252,8 +252,6 @@ main {
     cursor: pointer; }
   .error {
     font-size: 28px; }
-  .home-bg {
-    height: 50%; }
   .city-summary-header, .scores-header {
     font-size: 40px; }
   .summary {
@@ -270,9 +268,13 @@ main {
   .rate p {
     font-size: 35px; }
   .rate .icon {
-    height: 110%; } }
+    height: 110%; }
+  .desk-tab-row:last-of-type .rate:last-of-type h4 {
+    text-decoration-thickness: 7px; } }
 
 @media only screen and (min-width: 1200px) {
+  .intro, .home-bg {
+    height: 60%; }
   .slogan {
     margin: 10% auto;
     font-size: 34px; }
