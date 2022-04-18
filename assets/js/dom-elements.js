@@ -1,5 +1,6 @@
 import { showErrorMessage } from "./animations";
 
+const homePage = document.querySelector(".home");
 export const introSection = document.querySelector(".intro");
 export const slogan = document.querySelector(".slogan");
 export const siteName = document.querySelector(".brand");
@@ -13,6 +14,11 @@ export const citySummary = document.querySelector(".summary");
 
 export const scoresContainer = document.querySelector(".scores");
 export let rateCards = document.getElementsByClassName("rate");
+
+
+inputField.addEventListener("focus", () => {
+    homePage.style.height = "100vh";
+});
 
 export function createNewElement(tag, className){
     let element = document.createElement(tag);
