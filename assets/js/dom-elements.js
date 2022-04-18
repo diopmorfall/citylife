@@ -28,7 +28,7 @@ export function createRateCard(category){
 
     rateName.textContent = category.name.toUpperCase();
     rateScore.textContent = formatScore(category.score, rateName.textContent);
-    rateIcon.src = `./../assets/img/${rateName.textContent.toLowerCase()}.svg`;
+    rateIcon.src = `./img/${rateName.textContent.toLowerCase()}.svg`;
     
     rate.append(rateIcon);
     rate.append(rateName);
