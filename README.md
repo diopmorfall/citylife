@@ -24,7 +24,7 @@ The project must satisfy the following requirements:
 
 ### Links
 
-- Live Site URL: [Netlify](https://diopmorfall-s2i-js-basics-project.netlify.app/)
+- Live Site URL: [Netlify](https://s2i-jsadvanced-citylife.netlify.app/)
 - Source code: [Github](https://github.com/diopmorfall/citylife)
 
 ## My process
