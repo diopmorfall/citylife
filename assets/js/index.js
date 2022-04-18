@@ -25,6 +25,9 @@ import { form, inputField } from "./dom-elements";
 import { fetchUrl } from "./api"
 
 window.onload = function(){
+    let viewport = document.querySelector("meta[name=viewport]");
+    viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
+
     form.addEventListener("submit", event => {
         event.preventDefault();
         fetchUrl(inputField.value);
